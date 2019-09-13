@@ -8,5 +8,6 @@ router.post('/', deptController.createDept);
 router.get('/', deptController.listDepts);
 router.get('/:id', deptController.getDept);
 router.delete('/:id', deptController.deleteDept);
+router.put('/', deptController.editDept);
 
 module.exports = router;

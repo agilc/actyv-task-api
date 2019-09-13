@@ -104,3 +104,34 @@ exports.deleteDept = async (res,deptId) => {
     });
   }
 }
+
+exports.editDept = async (body,res) => {
+  try{
+    let newData = {
+      name: body.name,
+      descriprion: body.descriprion,
+      updatedBy: body.updatedBy
+    }
+    let result = await Dept.findByIdAndUpdate(body.id, newData);
+    if(!result){
+      res.status(404);
+      res.json({
+        code:"not_found",
+        message: "Resource not found"
+      });
+    }
+    else{
+      res.status(200);
+      res.json(result);
+      console.log("result service", result);
+    }
+  }
+  catch(error){
+      console.log("error while getting messages",error);
+      res.status(500);
+      res.json({
+        code:"internal_error",
+        message: "Server encountered an error, Please try again after some time"
+      });
+  } 
+}

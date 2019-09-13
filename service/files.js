@@ -104,3 +104,36 @@ exports.deleteFile = async (res,fileId) => {
     });
   }
 }
+
+exports.editFile = async (body,res) => {
+  try{
+    let newData = {
+      name: body.name,
+      descriprion: body.descriprion,
+      updatedBy: body.updatedBy,
+      url: body.url
+    }
+    let result = await File.findByIdAndUpdate(body.id, newData);
+
+    if(!result){
+      res.status(404);
+      res.json({
+        code:"not_found",
+        message: "Resource not found"
+      });
+    }
+    else{
+      res.status(200);
+      res.json(result);
+      console.log("result service", result);
+    }
+  }
+  catch(error){
+      console.log("error while getting messages",error);
+      res.status(500);
+      res.json({
+        code:"internal_error",
+        message: "Server encountered an error, Please try again after some time"
+      });
+  } 
+}

@@ -104,3 +104,37 @@ exports.deleteFile = async (req,res) => {
     });
   }
 }
+
+exports.editFile = async (req,res) => {
+
+  const schema = Joi.object({
+    id: Joi.string().required(),
+    name: Joi.string().required(),
+    description: Joi.string().required(),
+    updatedBy: Joi.string().required(),
+    url: Joi.string()
+  });
+
+  try{
+    let body = req.body;
+    const result = await schema.validate(req.body);
+    if(result.error){
+      res.status(400);
+      res.json({
+        code:"input_data_issue",
+        message: result.error.details[0].message.split('\"').join("")
+      });
+    }
+    else{
+      filesService.editFile(body, res);
+    }
+  }
+  catch(error){
+    console.log("error",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
+  }
+}

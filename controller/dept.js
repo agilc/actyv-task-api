@@ -8,9 +8,7 @@ exports.createDept = async (req,res) => {
   const schema = Joi.object({
     name: Joi.string().required(),
     description: Joi.string().required(),
-    createdBy: Joi.string().required(),
-    createdAt: Joi.date(),
-    updatedAt: Joi.date()
+    createdBy: Joi.string().required()
   });
 
   try{
@@ -87,6 +85,39 @@ exports.deleteDept = async (req,res) => {
     }
     else{
       deptService.deleteDept(res,deptId);
+    }
+  }
+  catch(error){
+    console.log("error",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
+  }
+}
+
+exports.editDept = async (req,res) => {
+
+  const schema = Joi.object({
+    id: Joi.string().required(),
+    name: Joi.string().required(),
+    description: Joi.string().required(),
+    updatedBy: Joi.string().required()
+  });
+
+  try{
+    let body = req.body;
+    const result = await schema.validate(req.body);
+    if(result.error){
+      res.status(400);
+      res.json({
+        code:"input_data_issue",
+        message: result.error.details[0].message.split('\"').join("")
+      });
+    }
+    else{
+      deptService.editDept(body, res);
     }
   }
   catch(error){

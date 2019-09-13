@@ -6,7 +6,7 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 
 var filesRouter = require('./routes/file');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/user');
 var deptRouter = require('./routes/dept');
 var categoryRouter = require('./routes/category');
 const { MONGODB_URL } = require('./constants/app');
@@ -35,7 +35,7 @@ mongoose.connect(MONGODB_URL, { useNewUrlParser: true })
     .catch(error => console.error("Could not connect to mongoDB",error));
 
 // routing
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 app.use('/files', filesRouter);
 app.use('/department', deptRouter);
 app.use('/category', categoryRouter);

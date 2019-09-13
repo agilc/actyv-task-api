@@ -8,5 +8,6 @@ router.post('/', fileController.createFile);
 router.get('/', fileController.listFiles);
 router.get('/:id', fileController.getFile);
 router.delete('/:id', fileController.deleteFile);
+router.put('/', fileController.editFile);
 
 module.exports = router;
