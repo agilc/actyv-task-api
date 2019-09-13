@@ -1,20 +1,16 @@
 'user strict';
 const Joi = require('@hapi/joi');
 
-const filesService = require('../service/files');
+const categoryService = require('../service/category');
 
-exports.createFile = async (req,res) => {
+exports.createCategory = async (req,res) => {
 
   const schema = Joi.object({
     name: Joi.string().required(),
     description: Joi.string().required(),
-    type: Joi.string().required(),
-    url: Joi.string(),
-    parent_id: Joi.string(),
-    container: Joi.string().required(),
-    containerId: Joi.string(),
-    createdAt: Date,
-    updatedAt: Date
+    createdBy: Joi.string().required(),
+    createdAt: Joi.date(),
+    updatedAt: Joi.date()
   });
 
   try{
@@ -28,7 +24,7 @@ exports.createFile = async (req,res) => {
       });
     }
     else{
-      filesService.createFile(body, res);
+      categoryService.createCategory(body, res);
     }
   }
   catch(error){
@@ -41,19 +37,15 @@ exports.createFile = async (req,res) => {
   }
 }
 
-exports.listFiles = async (req,res) => {
+exports.listCategory = async (req,res) => {
   try{
-    let { type, parentId, container, containerId } = req.query;
+    let { userId } = req.query;
     filterObj = {};
 
-    type && (filterObj["type"] = type);
-    parentId && (filterObj["parentId"] = parentId);
-    container && (filterObj["container"] = container);
-    containerId && (filterObj["containerId"] = containerId);
-
+    userId && (filterObj["createdBy"] = userId);
     console.log("filterObj",filterObj);
 
-    filesService.listFiles(res, filterObj);
+    categoryService.listCategory(res, filterObj);
   }
   catch(error){
     console.log("error",error);
@@ -65,10 +57,10 @@ exports.listFiles = async (req,res) => {
   }
 }
 
-exports.getFile = async (req,res) => {
+exports.getCategory = async (req,res) => {
   try{
-    let fileId = req.params.id;
-    filesService.getFile(res,fileId);
+    let categoryId = req.params.id;
+    categoryService.getCategory(res,categoryId);
   }
   catch(error){
     console.log("error",error);
@@ -80,11 +72,11 @@ exports.getFile = async (req,res) => {
   }
 }
 
-exports.deleteFile = async (req,res) => {
+exports.deleteCategory = async (req,res) => {
   try{
-    let fileId = req.params.id;
-    console.log("fileid",fileId);
-    if(!fileId){
+    let categoryId = req.params.id;
+    console.log("categoryId",categoryId);
+    if(!categoryId){
       res.status(400);
       res.json({
         code:"input_data_issue",
@@ -92,7 +84,7 @@ exports.deleteFile = async (req,res) => {
       });
     }
     else{
-      filesService.deleteFile(res,fileId);
+      categoryService.deleteCategory(res,categoryId);
     }
   }
   catch(error){

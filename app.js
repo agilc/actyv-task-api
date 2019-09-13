@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 
 var filesRouter = require('./routes/file');
 var usersRouter = require('./routes/users');
+var deptRouter = require('./routes/dept');
+var categoryRouter = require('./routes/category');
 const { MONGODB_URL } = require('./constants/app');
 
 var app = express();
@@ -35,6 +37,8 @@ mongoose.connect(MONGODB_URL, { useNewUrlParser: true })
 // routing
 app.use('/users', usersRouter);
 app.use('/files', filesRouter);
+app.use('/department', deptRouter);
+app.use('/category', categoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

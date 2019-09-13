@@ -1,11 +1,11 @@
 'use strict';
 
-const { File } = require('../model/file');
+const { Category } = require('../model/category');
 
-exports.createFile = async (body,res) => {
+exports.createCategory = async (body,res) => {
   try{
-      const file = new File(body);
-      let result = await file.save();
+      const category = new Category(body);
+      let result = await category.save();
       res.status(200);
       res.json(result);
       console.log("result service", result);
@@ -20,9 +20,9 @@ exports.createFile = async (body,res) => {
   } 
 }
 
-exports.listFiles = async (res, filterObj) => {
+exports.listCategory = async (res, filterObj) => {
   try{
-    let result = await File.find(filterObj);
+    let result = await Category.find(filterObj);
     res.status(200);
     res.json(result);
     console.log("result service", result);
@@ -38,9 +38,9 @@ exports.listFiles = async (res, filterObj) => {
   }
 }
 
-exports.getFile = async (res, fileId) => {
+exports.getCategory = async (res, categoryId) => {
   try{
-    let result = await File.findById(fileId);
+    let result = await Category.findById(categoryId);
 
     if(!result){
       res.status(404);
@@ -61,7 +61,7 @@ exports.getFile = async (res, fileId) => {
       res.status(400);
       res.json({
         code:"input_data_issue",
-        message: "Valid id required"
+        message: "Valid id is required"
       });
     }
     else{
@@ -74,9 +74,9 @@ exports.getFile = async (res, fileId) => {
   }
 }
 
-exports.deleteFile = async (res,fileId) => {
+exports.deleteCategory = async (res,categoryId) => {
   try{
-    let result = await File.findByIdAndRemove(fileId);
+    let result = await Category.findByIdAndRemove(categoryId);
     if(!result){
       res.status(404);
       res.json({
