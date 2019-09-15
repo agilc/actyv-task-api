@@ -13,7 +13,8 @@ const File = mongoose.model('File', new mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
     category: String,
-    checkoutStatus:{ type: Number, default: 0 }
+    checkoutStatus:{ type: Number, default: 0 },
+    checkedOutBy: String
   }));
 
 

@@ -138,7 +138,7 @@ exports.editFile = async (body,res) => {
   } 
 }
 
-exports.checkOutFile = async (res, fileId) => {
+exports.checkOutFile = async (res, fileId, checkedOutBy) => {
   try{
     let result = await File.findById(fileId);
 
@@ -152,6 +152,7 @@ exports.checkOutFile = async (res, fileId) => {
     else{
       console.log("result", result);
       result.checkoutStatus = 1;
+      result.checkedOutBy = checkedOutBy;
       const file = new File(result);
       result = await file.save();
       res.status(200);

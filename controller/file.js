@@ -144,7 +144,8 @@ exports.editFile = async (req,res) => {
 exports.checkOutFile = async (req,res) => {
   try{
     let fileId = req.params.id;
-    filesService.checkOutFile(res,fileId);
+    let checkedOutBy = req.params.user;
+    filesService.checkOutFile(res,fileId,checkedOutBy);
   }
   catch(error){
     console.log("error",error);
