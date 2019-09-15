@@ -2,9 +2,10 @@
 const Joi = require('@hapi/joi');
 
 const deptService = require('../service/dept');
+const logger = require('../util/logger');
 
 exports.createDept = async (req,res) => {
-
+  logger.debug("file controller : createDept : start");
   const schema = Joi.object({
     name: Joi.string().required(),
     description: Joi.string().required(),
@@ -14,9 +15,11 @@ exports.createDept = async (req,res) => {
   });
 
   try{
+    logger.debug("dept controller : createDept : Input Validation");
     let body = req.body;
     const result = await schema.validate(req.body);
     if(result.error){
+      logger.error("dept controller : createDept : Input Validation error %o",result.error);
       res.status(400);
       res.json({
         code:"input_data_issue",
@@ -24,11 +27,13 @@ exports.createDept = async (req,res) => {
       });
     }
     else{
+      logger.info("dept controller : createDept : Input Validation success");
       deptService.createDept(body, res);
     }
+    logger.debug("dept controller : createDept :end");
   }
   catch(error){
-    console.log("error",error);
+    logger.error("dept controller : createDept: catch %o",error);
     res.status(500);
     res.json({
       code:"internal_error",
@@ -39,18 +44,19 @@ exports.createDept = async (req,res) => {
 
 exports.listDepts = async (req,res) => {
   try{
+    logger.debug("dept controller : listDepts : start");
     let { userId, adminId } = req.query;
     filterObj = {};
 
-    userId && (filterObj["users._id"] = userId);
-    adminId && (filterObj["admins._id"] = adminId);
+    userId && (filterObj["users"] = userId);
+    adminId && (filterObj["admins"] = adminId);
 
-    console.log("filterObj",filterObj);
-
+    logger.debug("dept controller : listDepts : Search Params %o", filterObj);
     deptService.listDepts(res, filterObj);
+    logger.debug("dept controller : listDepts :end");
   }
   catch(error){
-    console.log("error",error);
+    logger.error("dept controller : listDepts: catch %o",error);
     res.status(500);
     res.json({
       code:"internal_error",
@@ -61,11 +67,13 @@ exports.listDepts = async (req,res) => {
 
 exports.getDept = async (req,res) => {
   try{
+    logger.debug("dept controller : getDept : start");
     let deptId = req.params.id;
     deptService.getDept(res,deptId);
+    logger.debug("dept controller : getDept :end");
   }
   catch(error){
-    console.log("error",error);
+    logger.error("dept controller : getDept: catch %o",error);
     res.status(500);
     res.json({
       code:"internal_error",
@@ -76,9 +84,11 @@ exports.getDept = async (req,res) => {
 
 exports.deleteDept = async (req,res) => {
   try{
+    logger.debug("dept controller : deleteDept : start");
     let deptId = req.params.id;
     console.log("deptId",deptId);
     if(!deptId){
+      logger.error("dept controller : deleteDept : Input Validation error %o",result.error);
       res.status(400);
       res.json({
         code:"input_data_issue",
@@ -86,11 +96,13 @@ exports.deleteDept = async (req,res) => {
       });
     }
     else{
+      logger.info("dept controller : deleteDept : Input Validation success");
       deptService.deleteDept(res,deptId);
     }
+    logger.debug("dept controller : deleteDept :end");
   }
   catch(error){
-    console.log("error",error);
+    logger.error("dept controller : deleteDept: catch %o",error);
     res.status(500);
     res.json({
       code:"internal_error",
@@ -100,7 +112,7 @@ exports.deleteDept = async (req,res) => {
 }
 
 exports.editDept = async (req,res) => {
-
+  logger.debug("dept controller : editDept : start");
   const schema = Joi.object({
     id: Joi.string().required(),
     name: Joi.string().required(),
@@ -114,6 +126,7 @@ exports.editDept = async (req,res) => {
     let body = req.body;
     const result = await schema.validate(req.body);
     if(result.error){
+      logger.error("dept controller : editDept : Input Validation error %o",result.error);
       res.status(400);
       res.json({
         code:"input_data_issue",
@@ -121,11 +134,13 @@ exports.editDept = async (req,res) => {
       });
     }
     else{
+      logger.info("dept controller : editDept : Input Validation success");
       deptService.editDept(body, res);
     }
+    logger.debug("dept controller : editDept :end");
   }
   catch(error){
-    console.log("error",error);
+    logger.error("dept controller : editDept: catch %o",error);
     res.status(500);
     res.json({
       code:"internal_error",

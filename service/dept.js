@@ -1,48 +1,52 @@
 'use strict';
 
 const { Dept } = require('../model/dept');
+const logger = require('../util/logger');
 
 exports.createDept = async (body,res) => {
   try{
-      const dept = new Dept(body);
-      let result = await dept.save();
-      res.status(200);
-      res.json(result);
-      console.log("result service", result);
+    logger.debug("dept service : createDept : start");
+    const dept = new Dept(body);
+    let result = await dept.save();
+    logger.info("dept service : createDept: result %o",result);
+    res.status(200);
+    res.json(result);
   }
   catch(error){
-      console.log("error while getting messages",error);
-      res.status(500);
-      res.json({
-        code:"internal_error",
-        message: "Server encountered an error, Please try again after some time"
-      });
+    logger.error("dept service : createDept: catch %o",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
   } 
 }
 
 exports.listDepts = async (res, filterObj) => {
   try{
+    logger.debug("dept service : listDepts : start");
     let result = await Dept.find(filterObj);
+    logger.info("dept service : listDepts: result %o",result);
     res.status(200);
     res.json(result);
-    console.log("result service", result);
-    console.log("file output",result);
   }
   catch(error){
-    console.log(" messages",error);
-      res.status(500);
-      res.json({
-        code:"internal_error",
-        message: "Server encountered an error, Please try again after some time"
-      });
+    logger.error("dept service : listDepts: catch %o",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
   }
 }
 
 exports.getDept = async (res, deptId) => {
   try{
+    logger.debug("dept service : getDept : start");
     let result = await Dept.findById(deptId);
-
+    logger.debug("dept service : getDept : filecheck",);
     if(!result){
+      logger.error("dept service : getDept: file not found %o",result);
       res.status(404);
       res.json({
         code:"not_found",
@@ -50,13 +54,13 @@ exports.getDept = async (res, deptId) => {
       });
     }
     else{
+      logger.info("dept service : getDept: result %o",result);
       res.status(200);
       res.json(result);
-      console.log("file output",result);
     }
   }
   catch(error){
-    console.log(" messages",error);
+    logger.error("dept service : getDept: catch %o",error);
     if(error.name === "CastError"){
       res.status(400);
       res.json({
@@ -76,8 +80,10 @@ exports.getDept = async (res, deptId) => {
 
 exports.deleteDept = async (res,deptId) => {
   try{
+    logger.debug("dept service : deleteDept : start");
     let result = await Dept.findByIdAndRemove(deptId);
     if(!result){
+      logger.error("dept service : deleteDept: file not found %o",result);
       res.status(404);
       res.json({
         code:"not_found",
@@ -89,7 +95,7 @@ exports.deleteDept = async (res,deptId) => {
     console.log("result service", result);
   }
   catch(error){
-    console.log(" messages",error.name);
+    logger.error("dept service : deleteDept: catch %o",error);
     if(error.name === "CastError"){
       res.status(400);
       res.json({
@@ -106,15 +112,11 @@ exports.deleteDept = async (res,deptId) => {
 }
 
 exports.editDept = async (body,res) => {
+  logger.debug("dept service : editDept : start");
   try{
-    let newData = {
-      name: body.name,
-      descriprion: body.descriprion,
-      updatedBy: body.updatedBy
-    }
     let result = await Dept.findByIdAndUpdate(body.id, body);
-    console.log("reeee",result);
     if(!result){
+      logger.error("dept service : editDept: file not found %o",result);
       res.status(404);
       res.json({
         code:"not_found",
@@ -122,13 +124,13 @@ exports.editDept = async (body,res) => {
       });
     }
     else{
+      logger.info("dept service : editDept: result %o",result);
       res.status(200);
       res.json(result);
-      console.log("result service", result);
     }
   }
   catch(error){
-      console.log("error while getting messages",error);
+      logger.error("dept service : editDept: catch %o",error);
       res.status(500);
       res.json({
         code:"internal_error",

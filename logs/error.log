@@ -1,0 +1,98 @@
+2019-09-15T19:42:12.857Z : file controller : createFile : Input Validation error { [ValidationError: "name" is not allowed to be empty]
+  [stack]: 'ValidationError: "name" is not allowed to be empty',
+  [message]: '"name" is not allowed to be empty',
+  _original: { name: '', type: 'FOLDER', container: 'MYFILES' },
+  details:
+   [ { message: '"name" is not allowed to be empty',
+       path: [ 'name', [length]: 1 ],
+       type: 'string.empty',
+       context: { label: 'name', value: '', key: 'name' } },
+     [length]: 1 ] }
+2019-09-15T19:50:52.129Z : file controller : createFile : Input Validation error { [ValidationError: "url" is not allowed to be empty]
+  [stack]: 'ValidationError: "url" is not allowed to be empty',
+  [message]: '"url" is not allowed to be empty',
+  _original:
+   { name: 'dsad',
+     type: 'FILE',
+     container: 'MYFILES',
+     url: '',
+     createdBy:
+      { _id: '5d7d516635decf4dc55f342b',
+        authUserId: 'Hx5WRoUcJrNiOVxOTly071sgfoD3',
+        email: 'agil@zoko.io',
+        name: 'agil',
+        createdAt: '2019-09-14T20:45:26.248Z',
+        updatedAt: '2019-09-14T20:45:26.248Z',
+        __v: 0 } },
+  details:
+   [ { message: '"url" is not allowed to be empty',
+       path: [ 'url', [length]: 1 ],
+       type: 'string.empty',
+       context: { label: 'url', value: '', key: 'url' } },
+     [length]: 1 ] }
+2019-09-15T19:52:09.073Z : file controller : createFile : Input Validation error { [ValidationError: "url" is not allowed to be empty]
+  [stack]: 'ValidationError: "url" is not allowed to be empty',
+  [message]: '"url" is not allowed to be empty',
+  _original:
+   { name: 'fd',
+     type: 'FILE',
+     container: 'MYFILES',
+     url: '',
+     createdBy:
+      { _id: '5d7d516635decf4dc55f342b',
+        authUserId: 'Hx5WRoUcJrNiOVxOTly071sgfoD3',
+        email: 'agil@zoko.io',
+        name: 'agil',
+        createdAt: '2019-09-14T20:45:26.248Z',
+        updatedAt: '2019-09-14T20:45:26.248Z',
+        __v: 0 } },
+  details:
+   [ { message: '"url" is not allowed to be empty',
+       path: [ 'url', [length]: 1 ],
+       type: 'string.empty',
+       context: { label: 'url', value: '', key: 'url' } },
+     [length]: 1 ] }
+2019-09-15T19:52:41.868Z : file controller : createFile : Input Validation error { [ValidationError: "url" is not allowed to be empty]
+  [stack]: 'ValidationError: "url" is not allowed to be empty',
+  [message]: '"url" is not allowed to be empty',
+  _original:
+   { name: 'da',
+     type: 'FILE',
+     container: 'MYFILES',
+     url: '',
+     createdBy:
+      { _id: '5d7d516635decf4dc55f342b',
+        authUserId: 'Hx5WRoUcJrNiOVxOTly071sgfoD3',
+        email: 'agil@zoko.io',
+        name: 'agil',
+        createdAt: '2019-09-14T20:45:26.248Z',
+        updatedAt: '2019-09-14T20:45:26.248Z',
+        __v: 0 } },
+  details:
+   [ { message: '"url" is not allowed to be empty',
+       path: [ 'url', [length]: 1 ],
+       type: 'string.empty',
+       context: { label: 'url', value: '', key: 'url' } },
+     [length]: 1 ] }
+2019-09-15T19:53:36.762Z : file controller : createFile : Input Validation error { [ValidationError: "url" is not allowed to be empty]
+  [stack]: 'ValidationError: "url" is not allowed to be empty',
+  [message]: '"url" is not allowed to be empty',
+  _original:
+   { name: 'dads',
+     type: 'FILE',
+     container: 'MYFILES',
+     url: '',
+     createdBy:
+      { _id: '5d7d516635decf4dc55f342b',
+        authUserId: 'Hx5WRoUcJrNiOVxOTly071sgfoD3',
+        email: 'agil@zoko.io',
+        name: 'agil',
+        createdAt: '2019-09-14T20:45:26.248Z',
+        updatedAt: '2019-09-14T20:45:26.248Z',
+        __v: 0 } },
+  details:
+   [ { message: '"url" is not allowed to be empty',
+       path: [ 'url', [length]: 1 ],
+       type: 'string.empty',
+       context: { label: 'url', value: '', key: 'url' } },
+     [length]: 1 ] }

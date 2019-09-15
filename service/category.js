@@ -1,17 +1,19 @@
 'use strict';
 
 const { Category } = require('../model/category');
+const logger = require('../util/logger');
 
 exports.createCategory = async (body,res) => {
   try{
+    logger.debug("category service : createCategory : start");
       const category = new Category(body);
       let result = await category.save();
+      logger.info("category service : createCategory: result %o",result);
       res.status(200);
       res.json(result);
-      console.log("result service", result);
   }
   catch(error){
-      console.log("error while getting messages",error);
+    logger.error("category service : createCategory: catch %o",error);
       res.status(500);
       res.json({
         code:"internal_error",
@@ -22,27 +24,29 @@ exports.createCategory = async (body,res) => {
 
 exports.listCategory = async (res, filterObj) => {
   try{
+    logger.debug("category service : listCategory : start");
     let result = await Category.find(filterObj);
+    logger.info("category service : listCategory: result %o",result);
     res.status(200);
     res.json(result);
-    console.log("result service", result);
-    console.log("file output",result);
   }
   catch(error){
-    console.log(" messages",error);
-      res.status(500);
-      res.json({
-        code:"internal_error",
-        message: "Server encountered an error, Please try again after some time"
-      });
+    logger.error("category service : listCategory: catch %o",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
   }
 }
 
 exports.getCategory = async (res, categoryId) => {
   try{
+    logger.debug("category service : getCategory : start");
     let result = await Category.findById(categoryId);
-
+    logger.debug("category service : getCategory : end");
     if(!result){
+      logger.error("category service : getCategory: file not found %o",result);
       res.status(404);
       res.json({
         code:"not_found",
@@ -50,13 +54,13 @@ exports.getCategory = async (res, categoryId) => {
       });
     }
     else{
+      logger.info("category service : getCategory: result %o",result);
       res.status(200);
       res.json(result);
-      console.log("file output",result);
     }
   }
   catch(error){
-    console.log(" messages",error);
+    logger.error("category service : getCategory: catch %o",error);
     if(error.name === "CastError"){
       res.status(400);
       res.json({
@@ -76,20 +80,22 @@ exports.getCategory = async (res, categoryId) => {
 
 exports.deleteCategory = async (res,categoryId) => {
   try{
+    logger.debug("category service : deleteCategory : start");
     let result = await Category.findByIdAndRemove(categoryId);
     if(!result){
+      logger.error("category service : deleteCategory: file not found %o",result);
       res.status(404);
       res.json({
         code:"not_found",
         message: "Resource not found"
       });
     }
+    logger.info("category service : deleteCategory: result %o",result);
     res.status(200);
     res.json(result);
-    console.log("result service", result);
   }
   catch(error){
-    console.log(" messages",error.name);
+    logger.error("category service : deleteCategory: catch %o",error);
     if(error.name === "CastError"){
       res.status(400);
       res.json({
@@ -106,15 +112,17 @@ exports.deleteCategory = async (res,categoryId) => {
 }
 
 exports.editCategory = async (body,res) => {
+  logger.debug("category service : editCategory : start");
   try{
     let newData = {
       name: body.name,
       description: body.description,
       updatedBy: body.updatedBy
     }
-    console.log("newdata",newData);
+    
     let result = await Category.findByIdAndUpdate(body.id, newData);
     if(!result){
+      logger.error("category service : editCategory: file not found %o",result);
       res.status(404);
       res.json({
         code:"not_found",
@@ -122,13 +130,13 @@ exports.editCategory = async (body,res) => {
       });
     }
     else{
+      logger.info("category service : editCategory: result %o",result);
       res.status(200);
       res.json(result);
-      console.log("result service", result);
     }
   }
   catch(error){
-      console.log("error while getting messages",error);
+    logger.error("category service : editCategory: catch %o",error);
       res.status(500);
       res.json({
         code:"internal_error",

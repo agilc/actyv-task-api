@@ -2,9 +2,10 @@
 const Joi = require('@hapi/joi');
 
 const userService = require('../service/user');
+const logger = require('../util/logger');
 
 exports.authenticateUser = async (req,res) => {
-  console.log("conteor");
+  logger.debug("user controller : authenticateUser : start");
   const schema = Joi.object({
     authUserId: Joi.string().required(),
     name: Joi.string(),
@@ -13,8 +14,10 @@ exports.authenticateUser = async (req,res) => {
 
   try{
     let body = req.body;
+    logger.debug("user controller : authenticateUser : Input Validation");
     const result = await schema.validate(req.body);
     if(result.error){
+      logger.error("user controller : authenticateUser : Input Validation error %o",result.error);
       res.status(400);
       res.json({
         code:"input_data_issue",
@@ -22,11 +25,13 @@ exports.authenticateUser = async (req,res) => {
       });
     }
     else{
+      logger.info("user controller : authenticateUser : Input Validation success");
       userService.authenticateUser(body, res);
     }
+    logger.debug("user controller : authenticateUser :end");
   }
   catch(error){
-    console.log("error",error);
+    logger.error("user controller : authenticateUser: catch %o",error);
     res.status(500);
     res.json({
       code:"internal_error",
@@ -37,10 +42,12 @@ exports.authenticateUser = async (req,res) => {
 
 exports.listUser = async (req,res) => {
   try{
+    logger.debug("user controller : listUser : start");
     userService.listUser(res);
+    logger.debug("user controller : listUser :end");
   }
   catch(error){
-    console.log("error",error);
+    logger.error("user controller : listUser: catch %o",error);
     res.status(500);
     res.json({
       code:"internal_error",
