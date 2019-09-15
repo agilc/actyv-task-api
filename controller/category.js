@@ -8,7 +8,7 @@ exports.createCategory = async (req,res) => {
   const schema = Joi.object({
     name: Joi.string().required(),
     description: Joi.string().required(),
-    createdBy: Joi.string().required()
+    createdBy: Joi.required()
   });
 
   try{
@@ -100,8 +100,8 @@ exports.editCategory = async (req,res) => {
   const schema = Joi.object({
     id: Joi.string().required(),
     name: Joi.string().required(),
-    description: Joi.string().required(),
-    updatedBy: Joi.string()
+    description: Joi.string(),
+    updatedBy: Joi.required()
   });
 
   try{

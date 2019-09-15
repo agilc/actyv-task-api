@@ -4,12 +4,11 @@ const Joi = require('@hapi/joi');
 const userService = require('../service/user');
 
 exports.authenticateUser = async (req,res) => {
-
+  console.log("conteor");
   const schema = Joi.object({
     authUserId: Joi.string().required(),
-    name: Joi.string().required(),
-    email: Joi.string().required(),
-    picture: Joi.string().required()
+    name: Joi.string(),
+    email: Joi.string().required()
   });
 
   try{

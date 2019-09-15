@@ -109,9 +109,10 @@ exports.editCategory = async (body,res) => {
   try{
     let newData = {
       name: body.name,
-      descriprion: body.descriprion,
+      description: body.description,
       updatedBy: body.updatedBy
     }
+    console.log("newdata",newData);
     let result = await Category.findByIdAndUpdate(body.id, newData);
     if(!result){
       res.status(404);

@@ -8,7 +8,9 @@ exports.createDept = async (req,res) => {
   const schema = Joi.object({
     name: Joi.string().required(),
     description: Joi.string().required(),
-    createdBy: Joi.string().required()
+    createdBy: Joi.object().required(),
+    admins: Joi.array().required(),
+    users: Joi.array()
   });
 
   try{
@@ -40,8 +42,8 @@ exports.listDepts = async (req,res) => {
     let { userId, adminId } = req.query;
     filterObj = {};
 
-    userId && (filterObj["users.id"] = userId);
-    adminId && (filterObj["admins.id"] = adminId);
+    userId && (filterObj["users._id"] = userId);
+    adminId && (filterObj["admins._id"] = adminId);
 
     console.log("filterObj",filterObj);
 
@@ -103,7 +105,9 @@ exports.editDept = async (req,res) => {
     id: Joi.string().required(),
     name: Joi.string().required(),
     description: Joi.string().required(),
-    updatedBy: Joi.string().required()
+    updatedBy: Joi.required(),
+    admins: Joi.array().required(),
+    users: Joi.array()
   });
 
   try{

@@ -112,7 +112,8 @@ exports.editDept = async (body,res) => {
       descriprion: body.descriprion,
       updatedBy: body.updatedBy
     }
-    let result = await Dept.findByIdAndUpdate(body.id, newData);
+    let result = await Dept.findByIdAndUpdate(body.id, body);
+    console.log("reeee",result);
     if(!result){
       res.status(404);
       res.json({

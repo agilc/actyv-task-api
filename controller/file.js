@@ -7,14 +7,15 @@ exports.createFile = async (req,res) => {
 
   const schema = Joi.object({
     name: Joi.string().required(),
-    description: Joi.string().required(),
+    description: Joi.string(),
     type: Joi.string().required(),
     url: Joi.string(),
-    parent_id: Joi.string(),
+    parentId: Joi.string(),
     container: Joi.string().required(),
     containerId: Joi.string(),
-    createdAt: Date,
-    updatedAt: Date
+    createdAt: Joi.date(),
+    updatedAt: Joi.date(),
+    category: Joi.string()
   });
 
   try{
@@ -43,13 +44,14 @@ exports.createFile = async (req,res) => {
 
 exports.listFiles = async (req,res) => {
   try{
-    let { type, parentId, container, containerId } = req.query;
+    let { type, parentId, container, containerId, category } = req.query;
     filterObj = {};
 
     type && (filterObj["type"] = type);
     parentId && (filterObj["parentId"] = parentId);
     container && (filterObj["container"] = container);
     containerId && (filterObj["containerId"] = containerId);
+    category && (filterObj["category"] = category);
 
     console.log("filterObj",filterObj);
 
@@ -127,6 +129,57 @@ exports.editFile = async (req,res) => {
     }
     else{
       filesService.editFile(body, res);
+    }
+  }
+  catch(error){
+    console.log("error",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
+  }
+}
+
+exports.checkOutFile = async (req,res) => {
+  try{
+    let fileId = req.params.id;
+    filesService.checkOutFile(res,fileId);
+  }
+  catch(error){
+    console.log("error",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
+  }
+}
+
+exports.checkInFile = async (req,res) => {
+
+  const schema = Joi.object({
+    _id: Joi.string().required(),
+    name: Joi.string(),
+    description: Joi.string(),
+    type: Joi.string(),
+    container: Joi.string(),
+    updatedBy: Joi.required(),
+    url: Joi.string().required()
+  });
+
+  try{
+    let body = req.body;
+    const result = await schema.validate(req.body);
+    if(result.error){
+      res.status(400);
+      res.json({
+        code:"input_data_issue",
+        message: result.error.details[0].message.split('\"').join("")
+      });
+    }
+    else{
+      filesService.checkInFile(body, res);
     }
   }
   catch(error){
