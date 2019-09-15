@@ -15,7 +15,9 @@ exports.createFile = async (req,res) => {
     containerId: Joi.string(),
     createdAt: Joi.date(),
     updatedAt: Joi.date(),
-    category: Joi.string()
+    category: Joi.string(),
+    createdBy: Joi.any(),
+    metadata: Joi.any()
   });
 
   try{
@@ -112,9 +114,10 @@ exports.editFile = async (req,res) => {
   const schema = Joi.object({
     id: Joi.string().required(),
     name: Joi.string().required(),
-    description: Joi.string().required(),
-    updatedBy: Joi.string().required(),
-    url: Joi.string()
+    description: Joi.string(),
+    updatedBy: Joi.any().required(),
+    category:Joi.string(),
+    metadata: Joi.array()
   });
 
   try{

@@ -107,13 +107,7 @@ exports.deleteFile = async (res,fileId) => {
 
 exports.editFile = async (body,res) => {
   try{
-    let newData = {
-      name: body.name,
-      descriprion: body.descriprion,
-      updatedBy: body.updatedBy,
-      url: body.url
-    }
-    let result = await File.findByIdAndUpdate(body.id, newData);
+    let result = await File.findByIdAndUpdate(body.id, body);
 
     if(!result){
       res.status(404);
@@ -182,6 +176,14 @@ exports.checkOutFile = async (res, fileId, checkedOutBy) => {
 exports.checkInFile = async (body,res) => {
   try{
     body.checkoutStatus = 0;
+
+    let file = await File.findById(body._id);
+    let temp = JSON.parse(JSON.stringify(file));
+    body.revisionHistory = temp.revisionHistory;
+    delete temp.revisionHistory;
+    body.revisionHistory.push(temp);
+    console.log(body);
+
     let result = await File.findByIdAndUpdate(body._id, body);
 
     if(!result){

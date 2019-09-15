@@ -9,12 +9,15 @@ const File = mongoose.model('File', new mongoose.Schema({
     container: { type: String, required:true },
     containerId: String,
     expiry: Date,
+    createdBy: { },
     updatedBy: { },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
     category: String,
     checkoutStatus:{ type: Number, default: 0 },
-    checkedOutBy: String
+    checkedOutBy: String,
+    revisionHistory: Array,
+    metadata: Array
   }));
 
 
