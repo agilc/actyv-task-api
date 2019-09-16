@@ -39666,3 +39666,1202 @@
     updatedAt: 2019-09-16T05:57:35.327Z,
     __v: 0 },
   [length]: 2 ]
+2019-09-16T06:43:46.949Z : category controller : listCategory : start
+2019-09-16T06:43:46.950Z : category controller : listCategory : Search Params {}
+2019-09-16T06:43:46.950Z : category service : listCategory : start
+2019-09-16T06:43:46.950Z : category controller : listCategory :end
+2019-09-16T06:43:46.952Z : file controller : listFiles : start
+2019-09-16T06:43:46.953Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:43:46.953Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:43:46.953Z : file service : listFiles : start
+2019-09-16T06:43:46.953Z : file controller : listFiles :end
+2019-09-16T06:43:47.211Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:43:47.214Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  [length]: 2 ]
+2019-09-16T06:43:55.858Z : user controller : listUser : start
+2019-09-16T06:43:55.858Z : user service : listUser : start
+2019-09-16T06:43:55.858Z : user controller : listUser :end
+2019-09-16T06:43:55.860Z : dept controller : listDepts : start
+2019-09-16T06:43:55.860Z : dept controller : listDepts : Search Params { users: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:43:55.860Z : dept service : listDepts : start
+2019-09-16T06:43:55.861Z : dept controller : listDepts :end
+2019-09-16T06:43:56.087Z : user service : listUser: result [ { _id: 5d7f19a4de218c6c75161dfd,
+    authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+    email: 'agil1@zoko.io',
+    createdAt: 2019-09-16T05:12:04.315Z,
+    updatedAt: 2019-09-16T05:12:04.315Z,
+    __v: 0 },
+  { _id: 5d7f1fa2cd97687221567a02,
+    authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+    email: 'agil@zoko.io',
+    name: 'agil c',
+    createdAt: 2019-09-16T05:37:38.221Z,
+    updatedAt: 2019-09-16T05:37:38.221Z,
+    __v: 0 },
+  { _id: 5d7f28d27cfca4787c7457d9,
+    authUserId: 'cwpaOE0cv1N6UUHo7uCpbfpTD1i2',
+    email: 'agilc315@zoko.io',
+    name: 'name',
+    createdAt: 2019-09-16T06:16:50.311Z,
+    updatedAt: 2019-09-16T06:16:50.311Z,
+    __v: 0 },
+  { _id: 5d7f29177cfca4787c7457da,
+    authUserId: 'EHMB14hYgzXOyyQgf3jXLC5iYI13',
+    email: 'agil1123@zoko.io',
+    name: 'new',
+    createdAt: 2019-09-16T06:17:59.980Z,
+    updatedAt: 2019-09-16T06:17:59.980Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:43:56.091Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:43:56.117Z : dept controller : listDepts : start
+2019-09-16T06:43:56.117Z : dept controller : listDepts : Search Params { admins: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:43:56.117Z : dept service : listDepts : start
+2019-09-16T06:43:56.117Z : dept controller : listDepts :end
+2019-09-16T06:43:56.279Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:07.900Z : file controller : createDept : start
+2019-09-16T06:44:07.901Z : dept controller : createDept : Input Validation
+2019-09-16T06:44:07.901Z : dept controller : createDept : Input Validation success
+2019-09-16T06:44:07.902Z : dept service : createDept : start
+2019-09-16T06:44:07.903Z : dept controller : createDept :end
+2019-09-16T06:44:08.136Z : dept service : createDept: result { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+  users: [ [length]: 0 ],
+  _id: 5d7f2f377cfca4787c7457dc,
+  name: 'new ',
+  createdBy:
+   { _id: '5d7f19a4de218c6c75161dfd',
+     authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+     email: 'agil1@zoko.io',
+     createdAt: '2019-09-16T05:12:04.315Z',
+     updatedAt: '2019-09-16T05:12:04.315Z',
+     __v: 0 },
+  createdAt: 2019-09-16T06:44:07.902Z,
+  updatedAt: 2019-09-16T06:44:07.902Z,
+  __v: 0 }
+2019-09-16T06:44:08.161Z : dept controller : listDepts : start
+2019-09-16T06:44:08.161Z : dept controller : listDepts : Search Params { users: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:08.162Z : dept service : listDepts : start
+2019-09-16T06:44:08.162Z : dept controller : listDepts :end
+2019-09-16T06:44:08.402Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:08.408Z : dept controller : listDepts : start
+2019-09-16T06:44:08.409Z : dept controller : listDepts : Search Params { users: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:08.409Z : dept service : listDepts : start
+2019-09-16T06:44:08.410Z : dept controller : listDepts :end
+2019-09-16T06:44:08.683Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:08.700Z : dept controller : listDepts : start
+2019-09-16T06:44:08.701Z : dept controller : listDepts : Search Params { admins: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:08.702Z : dept service : listDepts : start
+2019-09-16T06:44:08.703Z : dept controller : listDepts :end
+2019-09-16T06:44:08.991Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:23.252Z : file controller : createDept : start
+2019-09-16T06:44:23.253Z : dept controller : createDept : Input Validation
+2019-09-16T06:44:23.254Z : dept controller : createDept : Input Validation success
+2019-09-16T06:44:23.254Z : dept service : createDept : start
+2019-09-16T06:44:23.255Z : dept controller : createDept :end
+2019-09-16T06:44:23.456Z : dept service : createDept: result { admins: [ '5d7f28d27cfca4787c7457d9', [length]: 1 ],
+  users: [ [length]: 0 ],
+  _id: 5d7f2f477cfca4787c7457dd,
+  name: 'create',
+  createdBy:
+   { _id: '5d7f19a4de218c6c75161dfd',
+     authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+     email: 'agil1@zoko.io',
+     createdAt: '2019-09-16T05:12:04.315Z',
+     updatedAt: '2019-09-16T05:12:04.315Z',
+     __v: 0 },
+  createdAt: 2019-09-16T06:44:23.255Z,
+  updatedAt: 2019-09-16T06:44:23.255Z,
+  __v: 0 }
+2019-09-16T06:44:23.486Z : dept controller : listDepts : start
+2019-09-16T06:44:23.487Z : dept controller : listDepts : Search Params { users: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:23.487Z : dept service : listDepts : start
+2019-09-16T06:44:23.488Z : dept controller : listDepts :end
+2019-09-16T06:44:23.767Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:23.773Z : dept controller : listDepts : start
+2019-09-16T06:44:23.774Z : dept controller : listDepts : Search Params { users: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:23.775Z : dept service : listDepts : start
+2019-09-16T06:44:23.776Z : dept controller : listDepts :end
+2019-09-16T06:44:23.998Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:24.018Z : dept controller : listDepts : start
+2019-09-16T06:44:24.019Z : dept controller : listDepts : Search Params { admins: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:24.020Z : dept service : listDepts : start
+2019-09-16T06:44:24.021Z : dept controller : listDepts :end
+2019-09-16T06:44:24.310Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:29.883Z : category controller : listCategory : start
+2019-09-16T06:44:29.884Z : category controller : listCategory : Search Params {}
+2019-09-16T06:44:29.884Z : category service : listCategory : start
+2019-09-16T06:44:29.884Z : category controller : listCategory :end
+2019-09-16T06:44:30.115Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:44:30.448Z : user controller : listUser : start
+2019-09-16T06:44:30.448Z : user service : listUser : start
+2019-09-16T06:44:30.448Z : user controller : listUser :end
+2019-09-16T06:44:30.450Z : dept controller : listDepts : start
+2019-09-16T06:44:30.450Z : dept controller : listDepts : Search Params { users: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:30.451Z : dept service : listDepts : start
+2019-09-16T06:44:30.451Z : dept controller : listDepts :end
+2019-09-16T06:44:30.725Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:30.731Z : user service : listUser: result [ { _id: 5d7f19a4de218c6c75161dfd,
+    authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+    email: 'agil1@zoko.io',
+    createdAt: 2019-09-16T05:12:04.315Z,
+    updatedAt: 2019-09-16T05:12:04.315Z,
+    __v: 0 },
+  { _id: 5d7f1fa2cd97687221567a02,
+    authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+    email: 'agil@zoko.io',
+    name: 'agil c',
+    createdAt: 2019-09-16T05:37:38.221Z,
+    updatedAt: 2019-09-16T05:37:38.221Z,
+    __v: 0 },
+  { _id: 5d7f28d27cfca4787c7457d9,
+    authUserId: 'cwpaOE0cv1N6UUHo7uCpbfpTD1i2',
+    email: 'agilc315@zoko.io',
+    name: 'name',
+    createdAt: 2019-09-16T06:16:50.311Z,
+    updatedAt: 2019-09-16T06:16:50.311Z,
+    __v: 0 },
+  { _id: 5d7f29177cfca4787c7457da,
+    authUserId: 'EHMB14hYgzXOyyQgf3jXLC5iYI13',
+    email: 'agil1123@zoko.io',
+    name: 'new',
+    createdAt: 2019-09-16T06:17:59.980Z,
+    updatedAt: 2019-09-16T06:17:59.980Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:44:30.756Z : dept controller : listDepts : start
+2019-09-16T06:44:30.757Z : dept controller : listDepts : Search Params { admins: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:30.759Z : dept service : listDepts : start
+2019-09-16T06:44:30.759Z : dept controller : listDepts :end
+2019-09-16T06:44:31.032Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:33.079Z : category controller : listCategory : start
+2019-09-16T06:44:33.080Z : category controller : listCategory : Search Params {}
+2019-09-16T06:44:33.080Z : category service : listCategory : start
+2019-09-16T06:44:33.080Z : category controller : listCategory :end
+2019-09-16T06:44:33.144Z : file controller : listFiles : start
+2019-09-16T06:44:33.145Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:44:33.144Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:44:33.145Z : file service : listFiles : start
+2019-09-16T06:44:33.145Z : file controller : listFiles :end
+2019-09-16T06:44:33.246Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:44:33.319Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  [length]: 2 ]
+2019-09-16T06:44:34.764Z : user controller : listUser : start
+2019-09-16T06:44:34.764Z : user service : listUser : start
+2019-09-16T06:44:34.764Z : user controller : listUser :end
+2019-09-16T06:44:34.766Z : dept controller : listDepts : start
+2019-09-16T06:44:34.766Z : dept controller : listDepts : Search Params { users: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:34.766Z : dept service : listDepts : start
+2019-09-16T06:44:34.766Z : dept controller : listDepts :end
+2019-09-16T06:44:35.030Z : user service : listUser: result [ { _id: 5d7f19a4de218c6c75161dfd,
+    authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+    email: 'agil1@zoko.io',
+    createdAt: 2019-09-16T05:12:04.315Z,
+    updatedAt: 2019-09-16T05:12:04.315Z,
+    __v: 0 },
+  { _id: 5d7f1fa2cd97687221567a02,
+    authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+    email: 'agil@zoko.io',
+    name: 'agil c',
+    createdAt: 2019-09-16T05:37:38.221Z,
+    updatedAt: 2019-09-16T05:37:38.221Z,
+    __v: 0 },
+  { _id: 5d7f28d27cfca4787c7457d9,
+    authUserId: 'cwpaOE0cv1N6UUHo7uCpbfpTD1i2',
+    email: 'agilc315@zoko.io',
+    name: 'name',
+    createdAt: 2019-09-16T06:16:50.311Z,
+    updatedAt: 2019-09-16T06:16:50.311Z,
+    __v: 0 },
+  { _id: 5d7f29177cfca4787c7457da,
+    authUserId: 'EHMB14hYgzXOyyQgf3jXLC5iYI13',
+    email: 'agil1123@zoko.io',
+    name: 'new',
+    createdAt: 2019-09-16T06:17:59.980Z,
+    updatedAt: 2019-09-16T06:17:59.980Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:44:35.034Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:35.057Z : dept controller : listDepts : start
+2019-09-16T06:44:35.057Z : dept controller : listDepts : Search Params { admins: '5d7f19a4de218c6c75161dfd' }
+2019-09-16T06:44:35.057Z : dept service : listDepts : start
+2019-09-16T06:44:35.057Z : dept controller : listDepts :end
+2019-09-16T06:44:35.334Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:44.760Z : user controller : authenticateUser : start
+2019-09-16T06:44:44.762Z : user controller : authenticateUser : Input Validation
+2019-09-16T06:44:44.763Z : user controller : authenticateUser : Input Validation success
+2019-09-16T06:44:44.763Z : user service : authenticateUser : start
+2019-09-16T06:44:44.764Z : user controller : authenticateUser :end
+2019-09-16T06:44:44.963Z : user service : authenticateUser: result { _id: 5d7f1fa2cd97687221567a02,
+  authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+  email: 'agil@zoko.io',
+  name: 'agil c',
+  createdAt: 2019-09-16T05:37:38.221Z,
+  updatedAt: 2019-09-16T05:37:38.221Z,
+  __v: 0 }
+2019-09-16T06:44:47.753Z : category controller : listCategory : start
+2019-09-16T06:44:47.754Z : category controller : listCategory : Search Params {}
+2019-09-16T06:44:47.754Z : category service : listCategory : start
+2019-09-16T06:44:47.755Z : category controller : listCategory :end
+2019-09-16T06:44:47.756Z : file controller : listFiles : start
+2019-09-16T06:44:47.757Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:44:47.756Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:44:47.757Z : file service : listFiles : start
+2019-09-16T06:44:47.757Z : file controller : listFiles :end
+2019-09-16T06:44:47.947Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:44:47.954Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  [length]: 2 ]
+2019-09-16T06:44:49.490Z : user controller : listUser : start
+2019-09-16T06:44:49.491Z : user service : listUser : start
+2019-09-16T06:44:49.491Z : user controller : listUser :end
+2019-09-16T06:44:49.492Z : dept controller : listDepts : start
+2019-09-16T06:44:49.493Z : dept controller : listDepts : Search Params { users: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:44:49.494Z : dept service : listDepts : start
+2019-09-16T06:44:49.494Z : dept controller : listDepts :end
+2019-09-16T06:44:49.656Z : user service : listUser: result [ { _id: 5d7f19a4de218c6c75161dfd,
+    authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+    email: 'agil1@zoko.io',
+    createdAt: 2019-09-16T05:12:04.315Z,
+    updatedAt: 2019-09-16T05:12:04.315Z,
+    __v: 0 },
+  { _id: 5d7f1fa2cd97687221567a02,
+    authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+    email: 'agil@zoko.io',
+    name: 'agil c',
+    createdAt: 2019-09-16T05:37:38.221Z,
+    updatedAt: 2019-09-16T05:37:38.221Z,
+    __v: 0 },
+  { _id: 5d7f28d27cfca4787c7457d9,
+    authUserId: 'cwpaOE0cv1N6UUHo7uCpbfpTD1i2',
+    email: 'agilc315@zoko.io',
+    name: 'name',
+    createdAt: 2019-09-16T06:16:50.311Z,
+    updatedAt: 2019-09-16T06:16:50.311Z,
+    __v: 0 },
+  { _id: 5d7f29177cfca4787c7457da,
+    authUserId: 'EHMB14hYgzXOyyQgf3jXLC5iYI13',
+    email: 'agil1123@zoko.io',
+    name: 'new',
+    createdAt: 2019-09-16T06:17:59.980Z,
+    updatedAt: 2019-09-16T06:17:59.980Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:44:49.662Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:44:49.670Z : dept controller : listDepts : start
+2019-09-16T06:44:49.670Z : dept controller : listDepts : Search Params { admins: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:44:49.670Z : dept service : listDepts : start
+2019-09-16T06:44:49.671Z : dept controller : listDepts :end
+2019-09-16T06:44:49.902Z : dept service : listDepts: result [ { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f227ac1e0b6735b264ab2,
+    name: 'okk 12 2',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:49:46.051Z,
+    updatedAt: 2019-09-16T05:49:46.051Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f22efc1e0b6735b264ab4,
+    name: 'okm',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:51:43.751Z,
+    updatedAt: 2019-09-16T05:51:43.751Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f27587cfca4787c7457d7,
+    name: 'Agil',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:10:32.871Z,
+    updatedAt: 2019-09-16T06:10:32.871Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f2f377cfca4787c7457dc,
+    name: 'new ',
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:44:07.902Z,
+    updatedAt: 2019-09-16T06:44:07.902Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:44:59.914Z : file controller : createDept : start
+2019-09-16T06:44:59.915Z : dept controller : createDept : Input Validation
+2019-09-16T06:44:59.915Z : dept controller : createDept : Input Validation success
+2019-09-16T06:44:59.915Z : dept service : createDept : start
+2019-09-16T06:44:59.916Z : dept controller : createDept :end
+2019-09-16T06:45:00.113Z : dept service : createDept: result { admins: [ '5d7f28d27cfca4787c7457d9', [length]: 1 ],
+  users: [ [length]: 0 ],
+  _id: 5d7f2f6b7cfca4787c7457df,
+  name: 'ok',
+  createdBy:
+   { _id: '5d7f1fa2cd97687221567a02',
+     authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+     email: 'agil@zoko.io',
+     name: 'agil c',
+     createdAt: '2019-09-16T05:37:38.221Z',
+     updatedAt: '2019-09-16T05:37:38.221Z',
+     __v: 0 },
+  createdAt: 2019-09-16T06:44:59.916Z,
+  updatedAt: 2019-09-16T06:44:59.916Z,
+  __v: 0 }
+2019-09-16T06:45:00.152Z : dept controller : listDepts : start
+2019-09-16T06:45:00.152Z : dept controller : listDepts : Search Params { users: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:45:00.152Z : dept service : listDepts : start
+2019-09-16T06:45:00.153Z : dept controller : listDepts :end
+2019-09-16T06:45:00.420Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:45:00.426Z : dept controller : listDepts : start
+2019-09-16T06:45:00.427Z : dept controller : listDepts : Search Params { users: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:45:00.428Z : dept service : listDepts : start
+2019-09-16T06:45:00.428Z : dept controller : listDepts :end
+2019-09-16T06:45:00.624Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:45:00.632Z : dept controller : listDepts : start
+2019-09-16T06:45:00.632Z : dept controller : listDepts : Search Params { admins: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:45:00.633Z : dept service : listDepts : start
+2019-09-16T06:45:00.633Z : dept controller : listDepts :end
+2019-09-16T06:45:00.835Z : dept service : listDepts: result [ { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f227ac1e0b6735b264ab2,
+    name: 'okk 12 2',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:49:46.051Z,
+    updatedAt: 2019-09-16T05:49:46.051Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f22efc1e0b6735b264ab4,
+    name: 'okm',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:51:43.751Z,
+    updatedAt: 2019-09-16T05:51:43.751Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f27587cfca4787c7457d7,
+    name: 'Agil',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:10:32.871Z,
+    updatedAt: 2019-09-16T06:10:32.871Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f2f377cfca4787c7457dc,
+    name: 'new ',
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:44:07.902Z,
+    updatedAt: 2019-09-16T06:44:07.902Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:45:08.080Z : category controller : listCategory : start
+2019-09-16T06:45:08.081Z : category controller : listCategory : Search Params {}
+2019-09-16T06:45:08.081Z : category service : listCategory : start
+2019-09-16T06:45:08.081Z : category controller : listCategory :end
+2019-09-16T06:45:08.085Z : file controller : listFiles : start
+2019-09-16T06:45:08.085Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:45:08.085Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:45:08.086Z : file service : listFiles : start
+2019-09-16T06:45:08.086Z : file controller : listFiles :end
+2019-09-16T06:45:08.300Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:45:08.307Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  [length]: 2 ]
+2019-09-16T06:45:29.307Z : file controller : createFile : start
+2019-09-16T06:45:29.309Z : file controller : createFile : Input Validation
+2019-09-16T06:45:29.310Z : file controller : createFile : Input Validation success
+2019-09-16T06:45:29.310Z : file service : createFile : start
+2019-09-16T06:45:29.311Z : file controller : createFile :end
+2019-09-16T06:45:29.482Z : file service : createFile: result { checkoutStatus: 0,
+  revisionHistory: [ [length]: 0 ],
+  metadata: [ [length]: 0 ],
+  _id: 5d7f2f897cfca4787c7457e0,
+  name: 'hi',
+  type: 'FILE',
+  container: 'MYFILES',
+  url:
+   'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-25 15-02-46.png',
+  createdBy:
+   { _id: '5d7f1fa2cd97687221567a02',
+     authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+     email: 'agil@zoko.io',
+     name: 'agil c',
+     createdAt: '2019-09-16T05:37:38.221Z',
+     updatedAt: '2019-09-16T05:37:38.221Z',
+     __v: 0 },
+  createdAt: 2019-09-16T06:45:29.311Z,
+  updatedAt: 2019-09-16T06:45:29.311Z,
+  __v: 0 }
+2019-09-16T06:45:29.537Z : file controller : listFiles : start
+2019-09-16T06:45:29.538Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:45:29.538Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:45:29.539Z : file service : listFiles : start
+2019-09-16T06:45:29.539Z : file controller : listFiles :end
+2019-09-16T06:45:29.812Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f2f897cfca4787c7457e0,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-25 15-02-46.png',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:45:29.311Z,
+    updatedAt: 2019-09-16T06:45:29.311Z,
+    __v: 0 },
+  [length]: 3 ]
+2019-09-16T06:47:38.594Z : category controller : listCategory : start
+2019-09-16T06:47:38.595Z : category controller : listCategory : Search Params {}
+2019-09-16T06:47:38.595Z : category service : listCategory : start
+2019-09-16T06:47:38.596Z : category controller : listCategory :end
+2019-09-16T06:47:38.597Z : file controller : listFiles : start
+2019-09-16T06:47:38.597Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:47:38.597Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:47:38.598Z : file service : listFiles : start
+2019-09-16T06:47:38.598Z : file controller : listFiles :end
+2019-09-16T06:47:38.768Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f2f897cfca4787c7457e0,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-25 15-02-46.png',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:45:29.311Z,
+    updatedAt: 2019-09-16T06:45:29.311Z,
+    __v: 0 },
+  [length]: 3 ]
+2019-09-16T06:47:38.774Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:47:44.086Z : file controller : createFile : start
+2019-09-16T06:47:44.088Z : file controller : createFile : Input Validation
+2019-09-16T06:47:44.089Z : file controller : createFile : Input Validation success
+2019-09-16T06:47:44.089Z : file service : createFile : start
+2019-09-16T06:47:44.090Z : file controller : createFile :end
+2019-09-16T06:47:44.363Z : file service : createFile: result { checkoutStatus: 0,
+  revisionHistory: [ [length]: 0 ],
+  metadata: [ [length]: 0 ],
+  _id: 5d7f30107cfca4787c7457e1,
+  name: 'ok',
+  type: 'FOLDER',
+  container: 'MYFILES',
+  createdAt: 2019-09-16T06:47:44.090Z,
+  updatedAt: 2019-09-16T06:47:44.090Z,
+  __v: 0 }
+2019-09-16T06:47:44.482Z : file controller : listFiles : start
+2019-09-16T06:47:44.483Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:47:44.482Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:47:44.483Z : file service : listFiles : start
+2019-09-16T06:47:44.484Z : file controller : listFiles :end
+2019-09-16T06:47:44.784Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f2f897cfca4787c7457e0,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-25 15-02-46.png',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:45:29.311Z,
+    updatedAt: 2019-09-16T06:45:29.311Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f30107cfca4787c7457e1,
+    name: 'ok',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    createdAt: 2019-09-16T06:47:44.090Z,
+    updatedAt: 2019-09-16T06:47:44.090Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:48:16.489Z : category controller : listCategory : start
+2019-09-16T06:48:16.491Z : category controller : listCategory : Search Params {}
+2019-09-16T06:48:16.492Z : category service : listCategory : start
+2019-09-16T06:48:16.492Z : category controller : listCategory :end
+2019-09-16T06:48:16.504Z : file controller : listFiles : start
+2019-09-16T06:48:16.504Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:48:16.504Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:48:16.505Z : file service : listFiles : start
+2019-09-16T06:48:16.505Z : file controller : listFiles :end
+2019-09-16T06:48:16.702Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f2f897cfca4787c7457e0,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-25 15-02-46.png',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:45:29.311Z,
+    updatedAt: 2019-09-16T06:45:29.311Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f30107cfca4787c7457e1,
+    name: 'ok',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    createdAt: 2019-09-16T06:47:44.090Z,
+    updatedAt: 2019-09-16T06:47:44.090Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:48:16.703Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:48:22.603Z : user controller : listUser : start
+2019-09-16T06:48:22.604Z : user service : listUser : start
+2019-09-16T06:48:22.604Z : user controller : listUser :end
+2019-09-16T06:48:22.605Z : dept controller : listDepts : start
+2019-09-16T06:48:22.606Z : dept controller : listDepts : Search Params { users: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:48:22.606Z : dept service : listDepts : start
+2019-09-16T06:48:22.606Z : dept controller : listDepts :end
+2019-09-16T06:48:23.958Z : user service : listUser: result [ { _id: 5d7f19a4de218c6c75161dfd,
+    authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+    email: 'agil1@zoko.io',
+    createdAt: 2019-09-16T05:12:04.315Z,
+    updatedAt: 2019-09-16T05:12:04.315Z,
+    __v: 0 },
+  { _id: 5d7f1fa2cd97687221567a02,
+    authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+    email: 'agil@zoko.io',
+    name: 'agil c',
+    createdAt: 2019-09-16T05:37:38.221Z,
+    updatedAt: 2019-09-16T05:37:38.221Z,
+    __v: 0 },
+  { _id: 5d7f28d27cfca4787c7457d9,
+    authUserId: 'cwpaOE0cv1N6UUHo7uCpbfpTD1i2',
+    email: 'agilc315@zoko.io',
+    name: 'name',
+    createdAt: 2019-09-16T06:16:50.311Z,
+    updatedAt: 2019-09-16T06:16:50.311Z,
+    __v: 0 },
+  { _id: 5d7f29177cfca4787c7457da,
+    authUserId: 'EHMB14hYgzXOyyQgf3jXLC5iYI13',
+    email: 'agil1123@zoko.io',
+    name: 'new',
+    createdAt: 2019-09-16T06:17:59.980Z,
+    updatedAt: 2019-09-16T06:17:59.980Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:48:23.961Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:48:24.272Z : dept controller : listDepts : start
+2019-09-16T06:48:24.274Z : dept controller : listDepts : Search Params { admins: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:48:24.275Z : dept service : listDepts : start
+2019-09-16T06:48:24.275Z : dept controller : listDepts :end
+2019-09-16T06:48:24.507Z : dept service : listDepts: result [ { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f227ac1e0b6735b264ab2,
+    name: 'okk 12 2',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:49:46.051Z,
+    updatedAt: 2019-09-16T05:49:46.051Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f22efc1e0b6735b264ab4,
+    name: 'okm',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:51:43.751Z,
+    updatedAt: 2019-09-16T05:51:43.751Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f27587cfca4787c7457d7,
+    name: 'Agil',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:10:32.871Z,
+    updatedAt: 2019-09-16T06:10:32.871Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f2f377cfca4787c7457dc,
+    name: 'new ',
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:44:07.902Z,
+    updatedAt: 2019-09-16T06:44:07.902Z,
+    __v: 0 },
+  [length]: 4 ]
+2019-09-16T06:48:39.281Z : file controller : createDept : start
+2019-09-16T06:48:39.282Z : dept controller : createDept : Input Validation
+2019-09-16T06:48:39.283Z : dept controller : createDept : Input Validation success
+2019-09-16T06:48:39.283Z : dept service : createDept : start
+2019-09-16T06:48:39.284Z : dept controller : createDept :end
+2019-09-16T06:48:40.000Z : dept service : createDept: result { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+  users: [ [length]: 0 ],
+  _id: 5d7f30477cfca4787c7457e2,
+  name: 'new again',
+  createdBy:
+   { _id: '5d7f1fa2cd97687221567a02',
+     authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+     email: 'agil@zoko.io',
+     name: 'agil c',
+     createdAt: '2019-09-16T05:37:38.221Z',
+     updatedAt: '2019-09-16T05:37:38.221Z',
+     __v: 0 },
+  createdAt: 2019-09-16T06:48:39.284Z,
+  updatedAt: 2019-09-16T06:48:39.284Z,
+  __v: 0 }
+2019-09-16T06:48:40.080Z : dept controller : listDepts : start
+2019-09-16T06:48:40.081Z : dept controller : listDepts : Search Params { users: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:48:40.081Z : dept service : listDepts : start
+2019-09-16T06:48:40.082Z : dept controller : listDepts :end
+2019-09-16T06:48:40.266Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:48:40.288Z : dept controller : listDepts : start
+2019-09-16T06:48:40.288Z : dept controller : listDepts : Search Params { users: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:48:40.289Z : dept service : listDepts : start
+2019-09-16T06:48:40.289Z : dept controller : listDepts :end
+2019-09-16T06:48:40.550Z : dept service : listDepts: result [ [length]: 0 ]
+2019-09-16T06:48:40.584Z : dept controller : listDepts : start
+2019-09-16T06:48:40.584Z : dept controller : listDepts : Search Params { admins: '5d7f1fa2cd97687221567a02' }
+2019-09-16T06:48:40.585Z : dept service : listDepts : start
+2019-09-16T06:48:40.585Z : dept controller : listDepts :end
+2019-09-16T06:48:40.786Z : dept service : listDepts: result [ { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f227ac1e0b6735b264ab2,
+    name: 'okk 12 2',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:49:46.051Z,
+    updatedAt: 2019-09-16T05:49:46.051Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f22efc1e0b6735b264ab4,
+    name: 'okm',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:51:43.751Z,
+    updatedAt: 2019-09-16T05:51:43.751Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f27587cfca4787c7457d7,
+    name: 'Agil',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:10:32.871Z,
+    updatedAt: 2019-09-16T06:10:32.871Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f2f377cfca4787c7457dc,
+    name: 'new ',
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:44:07.902Z,
+    updatedAt: 2019-09-16T06:44:07.902Z,
+    __v: 0 },
+  { admins: [ '5d7f1fa2cd97687221567a02', [length]: 1 ],
+    users: [ [length]: 0 ],
+    _id: 5d7f30477cfca4787c7457e2,
+    name: 'new again',
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T06:48:39.284Z,
+    updatedAt: 2019-09-16T06:48:39.284Z,
+    __v: 0 },
+  [length]: 5 ]
