@@ -39489,3 +39489,180 @@
     updatedAt: 2019-09-16T05:57:35.327Z,
     __v: 0 },
   [length]: 2 ]
+2019-09-16T06:37:49.376Z : category controller : listCategory : start
+2019-09-16T06:37:49.377Z : category controller : listCategory : Search Params {}
+2019-09-16T06:37:49.378Z : category service : listCategory : start
+2019-09-16T06:37:49.378Z : category controller : listCategory :end
+2019-09-16T06:37:49.386Z : file controller : listFiles : start
+2019-09-16T06:37:49.386Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:37:49.386Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:37:49.386Z : file service : listFiles : start
+2019-09-16T06:37:49.387Z : file controller : listFiles :end
+2019-09-16T06:37:49.550Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:37:49.556Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  [length]: 2 ]
+2019-09-16T06:39:13.136Z : category controller : listCategory : start
+2019-09-16T06:39:13.141Z : category controller : listCategory : Search Params {}
+2019-09-16T06:39:13.142Z : category service : listCategory : start
+2019-09-16T06:39:13.142Z : category controller : listCategory :end
+2019-09-16T06:39:13.144Z : file controller : listFiles : start
+2019-09-16T06:39:13.145Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:39:13.144Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:39:13.147Z : file service : listFiles : start
+2019-09-16T06:39:13.149Z : file controller : listFiles :end
+2019-09-16T06:39:13.398Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:39:13.401Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  [length]: 2 ]
+2019-09-16T06:40:16.034Z : category controller : listCategory : start
+2019-09-16T06:40:16.034Z : category controller : listCategory : Search Params {}
+2019-09-16T06:40:16.035Z : category service : listCategory : start
+2019-09-16T06:40:16.035Z : category controller : listCategory :end
+2019-09-16T06:40:16.043Z : file controller : listFiles : start
+2019-09-16T06:40:16.043Z : file controller : listFiles : Search Params { container: 'MYFILES',
+  '$or':
+   [ { expiry: { '$gte': 2019-09-16T06:40:16.043Z } },
+     { expiry: { '$exists': false } },
+     [length]: 2 ] }
+2019-09-16T06:40:16.043Z : file service : listFiles : start
+2019-09-16T06:40:16.044Z : file controller : listFiles :end
+2019-09-16T06:40:16.322Z : category service : listCategory: result [ { _id: 5d7f2460c1e0b6735b264ab6,
+    name: 'new cst',
+    description: null,
+    createdBy:
+     { _id: '5d7f1fa2cd97687221567a02',
+       authUserId: 'xnUGzArl7KZGX040v8gxbo9SXmu1',
+       email: 'agil@zoko.io',
+       name: 'agil c',
+       createdAt: '2019-09-16T05:37:38.221Z',
+       updatedAt: '2019-09-16T05:37:38.221Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:57:52.666Z,
+    updatedAt: 2019-09-16T05:57:52.666Z,
+    __v: 0 },
+  [length]: 1 ]
+2019-09-16T06:40:16.324Z : file service : listFiles: result [ { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f19bade218c6c75161dfe,
+    name: 'hi',
+    type: 'FILE',
+    container: 'MYFILES',
+    url:
+     'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-23 20-21-23.png',
+    expiry: 2019-09-17T05:12:00.000Z,
+    createdBy:
+     { _id: '5d7f19a4de218c6c75161dfd',
+       authUserId: 'KcQ930PuSHQBa58OksO2uuoXS0N2',
+       email: 'agil1@zoko.io',
+       createdAt: '2019-09-16T05:12:04.315Z',
+       updatedAt: '2019-09-16T05:12:04.315Z',
+       __v: 0 },
+    createdAt: 2019-09-16T05:12:26.439Z,
+    updatedAt: 2019-09-16T05:12:26.439Z,
+    __v: 0 },
+  { checkoutStatus: 0,
+    revisionHistory: [ [length]: 0 ],
+    metadata: [ [length]: 0 ],
+    _id: 5d7f244fc1e0b6735b264ab5,
+    name: 'new cat',
+    type: 'FOLDER',
+    container: 'MYFILES',
+    description: 'des',
+    createdAt: 2019-09-16T05:57:35.327Z,
+    updatedAt: 2019-09-16T05:57:35.327Z,
+    __v: 0 },
+  [length]: 2 ]
