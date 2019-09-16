@@ -18,7 +18,8 @@ exports.createFile = async (req,res) => {
     updatedAt: Joi.date(),
     category: Joi.string(),
     createdBy: Joi.any(),
-    metadata: Joi.any()
+    metadata: Joi.any(),
+    expiry: Joi.date()
   });
 
   try{
@@ -52,7 +53,7 @@ exports.createFile = async (req,res) => {
 exports.listFiles = async (req,res) => {
   try{
     logger.debug("file controller : listFiles : start");
-    let { type, parentId, container, containerId, category } = req.query;
+    let { type, parentId, container, containerId, category, expiry } = req.query;
     filterObj = {};
 
     type && (filterObj["type"] = type);
@@ -60,6 +61,8 @@ exports.listFiles = async (req,res) => {
     container && (filterObj["container"] = container);
     containerId && (filterObj["containerId"] = containerId);
     category && (filterObj["category"] = category);
+    // filterObj["expiry"] = { $or: {"$exists": false, "$lte": new Date()}};
+    filterObj["$or"] = [ { expiry: { $gte: new Date() } }, { expiry: { $exists: false } } ];
 
     logger.debug("file controller : listFiles : Search Params %o", filterObj);
     filesService.listFiles(res, filterObj);
@@ -128,7 +131,8 @@ exports.editFile = async (req,res) => {
     description: Joi.string(),
     updatedBy: Joi.any().required(),
     category:Joi.string(),
-    metadata: Joi.array()
+    metadata: Joi.array(),
+    expiry: Joi.date()
   });
 
   try{

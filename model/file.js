@@ -17,7 +17,8 @@ const File = mongoose.model('File', new mongoose.Schema({
     checkoutStatus:{ type: Number, default: 0 },
     checkedOutBy: String,
     revisionHistory: Array,
-    metadata: Array
+    metadata: Array,
+    expiry: Date
   }));
 
 

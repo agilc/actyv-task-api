@@ -96,3 +96,114 @@
        type: 'string.empty',
        context: { label: 'url', value: '', key: 'url' } },
      [length]: 1 ] }
+2019-09-16T02:44:29.832Z : file controller : createFile : Input Validation error { [ValidationError: "expiryDate" is not allowed]
+  [stack]: 'ValidationError: "expiryDate" is not allowed',
+  [message]: '"expiryDate" is not allowed',
+  _original:
+   { name: 'hi',
+     type: 'FILE',
+     container: 'MYFILES',
+     url:
+      'https://zoko-web-facelift.s3.amazonaws.com/files/Screenshot from 2019-08-20 22-01-00.png',
+     category: '5d7c4f7bdfda9d51c13fd5f6',
+     expiryDate: '2019-10-03T18:30:00.000Z',
+     createdBy:
+      { _id: '5d7d516635decf4dc55f342b',
+        authUserId: 'Hx5WRoUcJrNiOVxOTly071sgfoD3',
+        email: 'agil@zoko.io',
+        name: 'agil',
+        createdAt: '2019-09-14T20:45:26.248Z',
+        updatedAt: '2019-09-14T20:45:26.248Z',
+        __v: 0 } },
+  details:
+   [ { message: '"expiryDate" is not allowed',
+       path: [ 'expiryDate', [length]: 1 ],
+       type: 'object.unknown',
+       context:
+        { child: 'expiryDate',
+          label: 'expiryDate',
+          value: '2019-10-03T18:30:00.000Z',
+          key: 'expiryDate' } },
+     [length]: 1 ] }
+2019-09-16T02:50:54.673Z : file controller : createFile : Input Validation error { [ValidationError: "expiry" is not allowed]
+  [stack]: 'ValidationError: "expiry" is not allowed',
+  [message]: '"expiry" is not allowed',
+  _original:
+   { name: 'haha',
+     type: 'FILE',
+     container: 'MYFILES',
+     url:
+      'https://zoko-web-facelift.s3.amazonaws.com/files/credit fair.png',
+     category: '5d7c4fe5dfda9d51c13fd5f8',
+     expiry: '2019-09-24T18:30:00.000Z',
+     createdBy:
+      { _id: '5d7d516635decf4dc55f342b',
+        authUserId: 'Hx5WRoUcJrNiOVxOTly071sgfoD3',
+        email: 'agil@zoko.io',
+        name: 'agil',
+        createdAt: '2019-09-14T20:45:26.248Z',
+        updatedAt: '2019-09-14T20:45:26.248Z',
+        __v: 0 } },
+  details:
+   [ { message: '"expiry" is not allowed',
+       path: [ 'expiry', [length]: 1 ],
+       type: 'object.unknown',
+       context:
+        { child: 'expiry',
+          label: 'expiry',
+          value: '2019-09-24T18:30:00.000Z',
+          key: 'expiry' } },
+     [length]: 1 ] }
+2019-09-16T02:55:00.764Z : file controller : editFile : Input Validation error { [ValidationError: "expiry" is not allowed]
+  [stack]: 'ValidationError: "expiry" is not allowed',
+  [message]: '"expiry" is not allowed',
+  _original:
+   { id: '5d7ef8b93010b7427fe4824d',
+     name: 'okyy',
+     updatedBy:
+      { _id: '5d7d516635decf4dc55f342b',
+        authUserId: 'Hx5WRoUcJrNiOVxOTly071sgfoD3',
+        email: 'agil@zoko.io',
+        name: 'agil',
+        createdAt: '2019-09-14T20:45:26.248Z',
+        updatedAt: '2019-09-14T20:45:26.248Z',
+        __v: 0 },
+     category: '5d7c502ddfda9d51c13fd5f9',
+     metadata: [ [length]: 0 ],
+     expiry: '2019-09-01T18:30:00.000Z' },
+  details:
+   [ { message: '"expiry" is not allowed',
+       path: [ 'expiry', [length]: 1 ],
+       type: 'object.unknown',
+       context:
+        { child: 'expiry',
+          label: 'expiry',
+          value: '2019-09-01T18:30:00.000Z',
+          key: 'expiry' } },
+     [length]: 1 ] }
+2019-09-16T03:15:41.068Z : file service : listFiles: catch { Error: Can't use $or with Date.
+    at SchemaDate.castForQuery (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schema/date.js:352:11)
+    at SchemaDate.SchemaType.castForQueryWrapper (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schematype.js:1326:17)
+    at cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/cast.js:288:39)
+    at model.Query.Query.cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:4638:12)
+    at model.Query.Query._castConditions (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1834:10)
+    at model.Query.<anonymous> (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1861:8)
+    at model.Query._wrappedThunk [as _find] (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/kareem/index.js:369:33)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)
+  [stack]:
+   "Error: Can't use $or with Date.\n    at SchemaDate.castForQuery (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schema/date.js:352:11)\n    at SchemaDate.SchemaType.castForQueryWrapper (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schematype.js:1326:17)\n    at cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/cast.js:288:39)\n    at model.Query.Query.cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:4638:12)\n    at model.Query.Query._castConditions (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1834:10)\n    at model.Query.<anonymous> (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1861:8)\n    at model.Query._wrappedThunk [as _find] (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)\n    at process.nextTick (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/kareem/index.js:369:33)\n    at processTicksAndRejections (internal/process/task_queues.js:79:9)",
+  [message]: "Can't use $or with Date." }
+2019-09-16T03:22:32.077Z : file service : listFiles: catch { Error: Can't use $or with Date.
+    at SchemaDate.castForQuery (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schema/date.js:352:11)
+    at SchemaDate.SchemaType.castForQueryWrapper (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schematype.js:1326:17)
+    at cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/cast.js:288:39)
+    at model.Query.Query.cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:4638:12)
+    at model.Query.Query._castConditions (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1834:10)
+    at model.Query.<anonymous> (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1861:8)
+    at model.Query._wrappedThunk [as _find] (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/kareem/index.js:369:33)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)
+  [stack]:
+   "Error: Can't use $or with Date.\n    at SchemaDate.castForQuery (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schema/date.js:352:11)\n    at SchemaDate.SchemaType.castForQueryWrapper (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/schematype.js:1326:17)\n    at cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/cast.js:288:39)\n    at model.Query.Query.cast (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:4638:12)\n    at model.Query.Query._castConditions (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1834:10)\n    at model.Query.<anonymous> (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/query.js:1861:8)\n    at model.Query._wrappedThunk [as _find] (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)\n    at process.nextTick (/media/agil/WoRk/job_hunt/actyv-task/actyv-task-api/node_modules/kareem/index.js:369:33)\n    at processTicksAndRejections (internal/process/task_queues.js:79:9)",
+  [message]: "Can't use $or with Date." }
