@@ -8,7 +8,7 @@ exports.createCategory = async (req,res) => {
   logger.debug("category controller : createCategory : start");
   const schema = Joi.object({
     name: Joi.string().required(),
-    description: Joi.string().required(),
+    description: Joi.string(),
     createdBy: Joi.required()
   });
 

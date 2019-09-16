@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Dept = mongoose.model('Dept', new mongoose.Schema({
     name: { type: String, required:true },
-    description: { type: String, required:true },
+    description: String,
     createdBy: { },
     admins: { type: Array, required: true },
     users: { type: Array },

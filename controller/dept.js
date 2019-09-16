@@ -8,7 +8,7 @@ exports.createDept = async (req,res) => {
   logger.debug("file controller : createDept : start");
   const schema = Joi.object({
     name: Joi.string().required(),
-    description: Joi.string().required(),
+    description: Joi.string(),
     createdBy: Joi.object().required(),
     admins: Joi.array().required(),
     users: Joi.array()
@@ -116,7 +116,7 @@ exports.editDept = async (req,res) => {
   const schema = Joi.object({
     id: Joi.string().required(),
     name: Joi.string().required(),
-    description: Joi.string().required(),
+    description: Joi.string(),
     updatedBy: Joi.required(),
     admins: Joi.array().required(),
     users: Joi.array()
