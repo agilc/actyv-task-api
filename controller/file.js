@@ -6,6 +6,31 @@ const filesService = require('../service/files');
 
 exports.createFile = async (req,res) => {
   logger.debug("file controller : createFile : start");
+  try{
+    let body = req.body;
+    logger.debug("file controller : createFile : Input Validation");
+    
+    const errorMessage = await createInputValidation(body);
+    if(errorMessage){
+      res.status(400);
+      res.json(errorMessage);
+    }
+    else{
+      filesService.createFile(body, res);
+    }
+    logger.debug("file controller : createFile :end");
+  }
+  catch(error){
+    logger.error("file controller : createFile: catch %o",error);
+    res.status(500);
+    res.json({
+      code:"internal_error",
+      message: "Server encountered an error, Please try again after some time"
+    });
+  }
+}
+
+let createInputValidation = async (body) =>{
   const schema = Joi.object({
     name: Joi.string().required(),
     description: Joi.string(),
@@ -22,31 +47,17 @@ exports.createFile = async (req,res) => {
     expiry: Joi.date()
   });
 
-  try{
-    let body = req.body;
-    logger.debug("file controller : createFile : Input Validation");
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("file controller : createFile : Input Validation error %o",result.error);
-      res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
-    }
-    else{
-      logger.info("file controller : createFile : Input Validation success");
-      filesService.createFile(body, res);
-    }
-    logger.debug("file controller : createFile :end");
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("file controller : createFile : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
   }
-  catch(error){
-    logger.error("file controller : createFile: catch %o",error);
-    res.status(500);
-    res.json({
-      code:"internal_error",
-      message: "Server encountered an error, Please try again after some time"
-    });
+  else{
+    logger.info("file controller : createFile : Input Validation success");
+    return false;
   }
 }
 
@@ -125,31 +136,20 @@ exports.deleteFile = async (req,res) => {
 
 exports.editFile = async (req,res) => {
   logger.debug("file controller : editFile : start");
-  const schema = Joi.object({
-    id: Joi.string().required(),
-    name: Joi.string().required(),
-    description: Joi.string(),
-    updatedBy: Joi.any().required(),
-    category:Joi.string(),
-    metadata: Joi.array(),
-    expiry: Joi.date()
-  });
+  
 
   try{
     let body = req.body;
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("file controller : editFile : Input Validation error %o",result.error);
+
+    const errorMessage = await editInputValidation(body);
+    if(errorMessage){
       res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
+      res.json(errorMessage);
     }
     else{
-      logger.info("file controller : editFile : Input Validation success");
       filesService.editFile(body, res);
     }
+
     logger.debug("file controller : editFile :end");
   }
   catch(error){
@@ -159,6 +159,32 @@ exports.editFile = async (req,res) => {
       code:"internal_error",
       message: "Server encountered an error, Please try again after some time"
     });
+  }
+}
+
+let editInputValidation = async (body) =>{
+  const schema = Joi.object({
+    id: Joi.string().required(),
+    name: Joi.string().required(),
+    description: Joi.string(),
+    updatedBy: Joi.any().required(),
+    category:Joi.string(),
+    metadata: Joi.array(),
+    url: Joi.string(),
+    expiry: Joi.date()
+  });
+
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("file controller : editFile : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
+  }
+  else{
+    logger.info("file controller : editFile : Input Validation success");
+    return false;
   }
 }
 
@@ -182,29 +208,16 @@ exports.checkOutFile = async (req,res) => {
 
 exports.checkInFile = async (req,res) => {
   logger.debug("file controller : checkInFile : start");
-  const schema = Joi.object({
-    _id: Joi.string().required(),
-    name: Joi.string(),
-    description: Joi.string(),
-    type: Joi.string(),
-    container: Joi.string(),
-    updatedBy: Joi.required(),
-    url: Joi.string().required()
-  });
 
   try{
     let body = req.body;
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("file controller : checkInFile : Input Validation error %o",result.error);
+
+    const errorMessage = await editInputValidation(body);
+    if(errorMessage){
       res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
+      res.json(errorMessage);
     }
     else{
-      logger.info("file controller : checkInFile : Input Validation success");
       filesService.checkInFile(body, res);
     }
     logger.debug("file controller : checkInFile :end");
@@ -218,3 +231,32 @@ exports.checkInFile = async (req,res) => {
     });
   }
 }
+
+let checkInInputValidation = async (body) =>{
+  const schema = Joi.object({
+    _id: Joi.string().required(),
+    name: Joi.string(),
+    description: Joi.string(),
+    type: Joi.string(),
+    container: Joi.string(),
+    updatedBy: Joi.required(),
+    url: Joi.string().required()
+  });
+
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("file controller : checkInFile : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
+  }
+  else{
+    logger.info("file controller : checkInFile : Input Validation success");
+    return false;
+  }
+}
+
+module.exports.createInputValidation = createInputValidation;
+module.exports.editInputValidation = editInputValidation;
+module.exports.checkInInputValidation = checkInInputValidation;

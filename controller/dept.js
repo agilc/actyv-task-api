@@ -6,28 +6,18 @@ const logger = require('../util/logger');
 
 exports.createDept = async (req,res) => {
   logger.debug("file controller : createDept : start");
-  const schema = Joi.object({
-    name: Joi.string().required(),
-    description: Joi.string(),
-    createdBy: Joi.object().required(),
-    admins: Joi.array().required(),
-    users: Joi.array()
-  });
+  
 
   try{
     logger.debug("dept controller : createDept : Input Validation");
     let body = req.body;
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("dept controller : createDept : Input Validation error %o",result.error);
+    
+    const errorMessage = await createInputValidation(body);
+    if(errorMessage){
       res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
+      res.json(errorMessage);
     }
     else{
-      logger.info("dept controller : createDept : Input Validation success");
       deptService.createDept(body, res);
     }
     logger.debug("dept controller : createDept :end");
@@ -39,6 +29,29 @@ exports.createDept = async (req,res) => {
       code:"internal_error",
       message: "Server encountered an error, Please try again after some time"
     });
+  }
+}
+
+let createInputValidation = async (body) =>{
+  const schema = Joi.object({
+    name: Joi.string().required(),
+    description: Joi.string(),
+    createdBy: Joi.object().required(),
+    admins: Joi.array().required(),
+    users: Joi.array()
+  });
+
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("dept controller : createDept : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
+  }
+  else{
+    logger.info("category controller : createCategory : Input Validation success");
+    return false;
   }
 }
 
@@ -124,19 +137,16 @@ exports.editDept = async (req,res) => {
 
   try{
     let body = req.body;
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("dept controller : editDept : Input Validation error %o",result.error);
+
+    const errorMessage = await editInputValidation(body);
+    if(errorMessage){
       res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
+      res.json(errorMessage);
     }
     else{
-      logger.info("dept controller : editDept : Input Validation success");
       deptService.editDept(body, res);
     }
+
     logger.debug("dept controller : editDept :end");
   }
   catch(error){
@@ -148,3 +158,31 @@ exports.editDept = async (req,res) => {
     });
   }
 }
+
+let editInputValidation = async (body) =>{
+  const schema = Joi.object({
+    id: Joi.string().required(),
+    name: Joi.string().required(),
+    description: Joi.string(),
+    updatedBy: Joi.required(),
+    admins: Joi.array().required(),
+    users: Joi.array()
+  });
+
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("dept controller : editDept : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
+  }
+  else{
+    logger.info("dept controller : editDept : Input Validation success");
+    return false;
+  }
+}
+
+
+module.exports.createInputValidation = createInputValidation;
+module.exports.editInputValidation = editInputValidation;

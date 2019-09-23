@@ -6,26 +6,16 @@ const logger = require('../util/logger');
 
 exports.createCategory = async (req,res) => {
   logger.debug("category controller : createCategory : start");
-  const schema = Joi.object({
-    name: Joi.string().required(),
-    description: Joi.string(),
-    createdBy: Joi.required()
-  });
 
   try{
     let body = req.body;
     logger.debug("category controller : createCategory : Input Validation");
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("category controller : createCategory : Input Validation error %o",result.error);
+    const errorMessage = await createInputValidation(body);
+    if(errorMessage){
       res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
+      res.json(errorMessage);
     }
     else{
-      logger.info("category controller : createCategory : Input Validation success");
       categoryService.createCategory(body, res);
     }
     logger.debug("category controller : createCategory :end");
@@ -37,6 +27,27 @@ exports.createCategory = async (req,res) => {
       code:"internal_error",
       message: "Server encountered an error, Please try again after some time"
     });
+  }
+}
+
+let createInputValidation = async (body) =>{
+  const schema = Joi.object({
+    name: Joi.string().required(),
+    description: Joi.string(),
+    createdBy: Joi.required()
+  });
+
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("category controller : createCategory : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
+  }
+  else{
+    logger.info("category controller : createCategory : Input Validation success");
+    return false;
   }
 }
 
@@ -110,28 +121,18 @@ exports.deleteCategory = async (req,res) => {
 
 exports.editCategory = async (req,res) => {
   logger.debug("category controller : editCategory : start");
-  const schema = Joi.object({
-    id: Joi.string().required(),
-    name: Joi.string().required(),
-    description: Joi.string(),
-    updatedBy: Joi.required()
-  });
 
   try{
     let body = req.body;
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("category controller : editCategory : Input Validation error %o",result.error);
+    const errorMessage = await editInputValidation(body);
+    if(errorMessage){
       res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
+      res.json(errorMessage);
     }
     else{
-      logger.info("category controller : editCategory : Input Validation success %o", body);
       categoryService.editCategory(body, res);
     }
+
     logger.debug("category controller : editCategory :end");
   }
   catch(error){
@@ -143,3 +144,28 @@ exports.editCategory = async (req,res) => {
     });
   }
 }
+
+let editInputValidation = async (body) =>{
+  const schema = Joi.object({
+    id: Joi.string().required(),
+    name: Joi.string().required(),
+    description: Joi.string(),
+    updatedBy: Joi.required()
+  });
+
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("category controller : editCategory : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
+  }
+  else{
+    logger.info("category controller : editCategory : Input Validation success");
+    return false;
+  }
+}
+
+module.exports.createInputValidation = createInputValidation;
+module.exports.editInputValidation = editInputValidation;

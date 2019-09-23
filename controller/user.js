@@ -6,28 +6,19 @@ const logger = require('../util/logger');
 
 exports.authenticateUser = async (req,res) => {
   logger.debug("user controller : authenticateUser : start");
-  const schema = Joi.object({
-    authUserId: Joi.string().required(),
-    name: Joi.string(),
-    email: Joi.string().required()
-  });
 
   try{
     let body = req.body;
     logger.debug("user controller : authenticateUser : Input Validation");
-    const result = await schema.validate(req.body);
-    if(result.error){
-      logger.error("user controller : authenticateUser : Input Validation error %o",result.error);
+    const errorMessage = await authInputValidation(body);
+    if(errorMessage){
       res.status(400);
-      res.json({
-        code:"input_data_issue",
-        message: result.error.details[0].message.split('\"').join("")
-      });
+      res.json(errorMessage);
     }
     else{
-      logger.info("user controller : authenticateUser : Input Validation success");
       userService.authenticateUser(body, res);
     }
+    
     logger.debug("user controller : authenticateUser :end");
   }
   catch(error){
@@ -37,6 +28,27 @@ exports.authenticateUser = async (req,res) => {
       code:"internal_error",
       message: "Server encountered an error, Please try again after some time"
     });
+  }
+}
+
+let authInputValidation = async (body) =>{
+  const schema = Joi.object({
+    authUserId: Joi.string().required(),
+    name: Joi.string(),
+    email: Joi.string().required()
+  });
+
+  const result = await schema.validate(body);
+  if(result.error){
+    logger.error("user controller : authenticateUser : Input Validation error %o",result.error);
+    return {
+      code:"input_data_issue",
+      message: result.error.details[0].message.split('\"').join("")
+    };
+  }
+  else{
+    logger.info("user controller : authenticateUser : Input Validation success");
+    return false;
   }
 }
 
@@ -55,3 +67,5 @@ exports.listUser = async (req,res) => {
     });
   }
 }
+
+module.exports.authInputValidation = authInputValidation;
