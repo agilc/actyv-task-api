@@ -1,6 +1,8 @@
 DMS:
 
-Its the DMS API, it is buit using NodeJs, Express and MongoDb
+Its the DMS API, it is buit using NodeJs, Express and MongoDb.
+Unit testing is implemented using Jest.
+Docker container is added for CI/CD/
 
 The main features are:
 
